@@ -1,9 +1,9 @@
-
+document.addEventListener("DOMContentLoaded", function() {
+    
 function encrypt(){
     let passhash=CryptoJS.SHA256(document.getElementById("account").value);
     let out=document.getElementById("hashedNumber");
     let cpy=document.getElementById("output");
-    cpy.style.display='inline-block';
     out.innerText="";
     out.innerText= passhash;
 };
@@ -20,3 +20,5 @@ e.oninput = encrypt;
 
 tippy('[title]');
 tippy('#tips', { target: '.btn-class-copy' });
+
+});
