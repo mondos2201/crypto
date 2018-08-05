@@ -1,0 +1,19 @@
+{
+  "name": "sky-crypto",
+  "version": "1.0.0",
+  "description": "Very Basic UI for encryption",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mondos2201/crypto.git"
+  },
+  "author": "Mondos",
+  "license": "UNLICENCED",
+  "bugs": {
+    "url": "https://github.com/mondos2201/crypto/issues"
+  },
+  "homepage": "https://github.com/mondos2201/crypto#readme"
+}
