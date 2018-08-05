@@ -1,11 +1,11 @@
-
 html *
 {
+max-width: 1200px;
 font-family: 'Ubuntu' ;
 }
 .title {
 color:#000;
-font-size:1.3vw;
+font-size:1.2vw;
 }
 .brand-logo{
 height:5%;
@@ -13,13 +13,14 @@ width:5%;
 
 }
 .hashedNumber {
-color:#000;
+color:grey;
 font-family:'Exo 2';
-font-size:0.9vw;
+font-size:1vw;
+cursor:pointer;
 }
 /* label color */
 .input-field label {
-     color: #000 !important;
+     color:grey !important;
      font-family:'Ubuntu' !important;
    }
    /* label focus color */
@@ -48,9 +49,15 @@ font-size:0.9vw;
    .input-field{
        font-size:2em !important;
    }
-   .tiny {
-     font-size:0.6em;
-   }
    img.middle{
      vertical-align: middle;
    }
+.container{
+margin-top:25px;
+}
+#toast-container {
+  min-width: 10%;
+  top: 0%;
+  right: 50%;
+  transform: translateX(50%) translateY(50%);
+}

@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Encryption Tool</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Encryption Tool</title>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 </head>
 <body> 
-    <div class="container animated fadeIn">
-            <div class="card card-panel darken-1" id="card">
-            <div class="card-content white-text">
-                     <span class="card-title title flow-text">CSG Insights - GCP Encryption
-                       <img class="brand-logo responsive-img middle" src="https://infotrust.com/wp-content/uploads/2018/01/infotrust-technology-stack-big-query-logo.png"></span>
-          <div class="input-field col s6">
-        <i class="material-icons prefix"></i>      
-            <input type="text" data-length="255" required id="account" class="inputText" autocomplete="off"/>
-            <label for="account">Enter text ...<i class="material-icons left">https</i></label>
-          <div class="valign-wrapper"> 
-          <div class="row">
-                   <p id="output" class="output">
-                    <span id="hashedNumber" class="hashedNumber"></span>
-                    <a href="#" id="copy" data-tippy-placement="right"
-                     title="Copy to Clipboard" onClick="CopyToClipboard()" class=""><i class="tiny material-icons" style="color:grey;cursor: pointer;display: none;">content_copy</i></a> 
-                 </p>
-          </div>   
-        </div>   
-      </div>  
-    </div> 
-  </div>
+<div class="container animated fadeIn">
+<div class="card card-medium darken-2" id="card">
+<div class="card-content white-text">
+   <span class="card-title title hide-on-small-only flow-text">CSG Insights - GCP Encryption
+   <img class="brand-logo responsive-img middle" src="https://infotrust.com/wp-content/uploads/2018/01/infotrust-technology-stack-big-query-logo.png"></span>
+  <form>
+ <div class="row">
+  <div class="input-field col s12">
+  <i class="material-icons prefix"></i>
+<input type="text" id="account" class="inputText active" autocomplete="off" data-length="150"/>
+<label for="account">Enter text ...<i class="material-icons left" data-tippy-placement="bottom" title="Enter the text to encrypt">https</i></label>
+</div>
+</div>
+</form>
+<div class="darken-1 col s12 flow-text" id="results" style="display:none">
+<p id="output">
+<blockquote>
+  <span id="hashedNumber" class="hashedNumber hide-on-small-only" data-tippy-placement="top" title="Copy to clipboard" onClick="CopyToClipboard()"></span>
+<a class="btn-floating btn-small waves-effect grey lighten-5"><i class="large material-icons" data-tippy-placement="top"style="color:grey;" title="Copy to clipboard" onClick="CopyToClipboard()">content_copy</i></a>
+</blockquote>
+</p></div>  
+</div>
+</div> 
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -42,5 +44,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.min.js" integrity="sha256-hV6Ff1ZbnLObO8BWHPZs1oA3aPZkX4bnnEKO4nX1sm0=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.min.js" integrity="sha256-pMgPw2sArXEcjAzvhVgWZ4iS4Jm3NKrLG0mFWdrUwCE=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.min.js" integrity="sha256-cWzRia+bxBCmFQv+ZjhTVz95Q5VcDIQAWiiZvaRBDeQ=" crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
