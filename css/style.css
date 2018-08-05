@@ -1,0 +1,56 @@
+
+html *
+{
+font-family: 'Ubuntu' ;
+}
+.title {
+color:#000;
+font-size:1.3vw;
+}
+.brand-logo{
+height:5%;
+width:5%;
+
+}
+.hashedNumber {
+color:#000;
+font-family:'Exo 2';
+font-size:0.9vw;
+}
+/* label color */
+.input-field label {
+     color: #000 !important;
+     font-family:'Ubuntu' !important;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color:rgb(24, 140, 207) !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid rgb(24, 140, 207) !important;
+     box-shadow: 0 1px 0 0 rgb(24, 140, 207) !important;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid rgb(24, 140, 207) !important;
+     box-shadow: 0 1px 0 0 rgb(24, 140, 207) !important;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000 !important;
+   } 
+   .input-field{
+       font-size:2em !important;
+   }
+   .tiny {
+     font-size:0.6em;
+   }
+   img.middle{
+     vertical-align: middle;
+   }
