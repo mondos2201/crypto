@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encryption Tool</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+html *
+{
+font-family: 'Ubuntu' ;
+}
+.title {
+color:#000;
+font-size:1.3vw;
+}
+.brand-logo{
+height:5%;
+width:5%;
+
+}
+.hashedNumber {
+color:#000;
+font-family:'Exo 2';
+font-size:0.9vw;
+}
+/* label color */
+.input-field label {
+     color: #000 !important;
+     font-family:'Ubuntu' !important;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color:rgb(24, 140, 207) !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid rgb(24, 140, 207) !important;
+     box-shadow: 0 1px 0 0 rgb(24, 140, 207) !important;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid rgb(24, 140, 207) !important;
+     box-shadow: 0 1px 0 0 rgb(24, 140, 207) !important;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000 !important;
+   } 
+   .input-field{
+       font-size:2em !important;
+   }
+   .tiny {
+     font-size:0.6em;
+   }
+   img.middle{
+     vertical-align: middle;
+   }
+</style>
+</head>
+<body> 
+    <div class="container animated fadeIn">
+            <div class="card card-panel darken-1" id="card">
+            <div class="card-content white-text">
+                     <span class="card-title title flow-text">CSG Insights - GCP Encryption
+                       <img class="brand-logo responsive-img middle" src="https://infotrust.com/wp-content/uploads/2018/01/infotrust-technology-stack-big-query-logo.png"></span>
+          <div class="input-field col s6">
+        <i class="material-icons prefix"></i>      
+            <input type="text" data-length="255" required id="account" class="inputText" autocomplete="off"/>
+            <label for="account">Enter text ...<i class="material-icons left">https</i></label>
+          <div class="valign-wrapper"> 
+          <div class="row">
+                   <p id="output" class="output">
+                    <span id="hashedNumber" class="hashedNumber"></span>
+                    <a href="#" id="copy" data-tippy-placement="right"
+                     title="Copy to Clipboard" onClick="CopyToClipboard()" class=""><i class="tiny material-icons" style="color:grey;cursor: pointer;display: none;">content_copy</i></a> 
+                 </p>
+          </div>   
+        </div>   
+      </div>  
+    </div> 
+  </div>
+</div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="https://unpkg.com/tippy.js@2.5.4/dist/tippy.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.min.js" integrity="sha256-hV6Ff1ZbnLObO8BWHPZs1oA3aPZkX4bnnEKO4nX1sm0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.min.js" integrity="sha256-pMgPw2sArXEcjAzvhVgWZ4iS4Jm3NKrLG0mFWdrUwCE=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/sha256.min.js" integrity="sha256-cWzRia+bxBCmFQv+ZjhTVz95Q5VcDIQAWiiZvaRBDeQ=" crossorigin="anonymous"></script>
+      <script>
+            function encrypt(){
+                let passhash=CryptoJS.SHA256(document.getElementById("account").value);
+                let out=document.getElementById("hashedNumber");
+                let cpy=document.getElementById("output");
+                cpy.style.display='inline-block';
+                out.innerText="";
+                out.innerText= passhash;
+            };
+function CopyToClipboard(){
+let inp =document.createElement('input');
+document.body.appendChild(inp);
+inp.value =document.getElementById('output').textContent.replace(/\s/g,'');
+inp.select();
+document.execCommand('copy',false);
+inp.remove();
+ }
+ var e = document.getElementById('account');
+       e.oninput = encrypt;
+</script>
+<script>
+tippy('[title]');
+tippy('#tips', { target: '.btn-class-copy' });
+</script>
+
+</body>
+</html>
