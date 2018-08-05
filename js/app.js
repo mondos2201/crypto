@@ -16,7 +16,7 @@ inp.value =source.textContent.replace(/\s/g,'');
 inp.select();
 document.execCommand('copy',false);
 inp.remove();
-M.toast({html:'Key copied succesfully!'});
+M.toast({html:'Key copied successfully!'});
 }
 var e = document.getElementById('account');
 e.oninput = encrypt;
