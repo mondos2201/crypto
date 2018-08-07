@@ -17,7 +17,17 @@ inp.select();
 document.execCommand('copy',false);
 inp.remove();
 M.toast({html:'Key copied successfully!'});
+
+fetch('http://api.icndb.com/jokes/random?limitTo=[nerdy]')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+  });
 }
+
+
 var e = document.getElementById('account');
 e.oninput = encrypt;
 tippy('[title]');
