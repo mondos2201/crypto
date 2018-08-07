@@ -17,6 +17,29 @@ inp.select();
 document.execCommand('copy',false);
 inp.remove();
 M.toast({html:'Key copied successfully!'});
+
+  var e = document.getElementById('account');
+  e.oninput = encrypt;
+  tippy('[title]');
+  const checkStatus=response => {
+  if (response.ok) {
+    return response;
+   } else {
+  const error=new Error(response.statusText);
+  error.response=response;
+  throw error;
+    }
+  };
+  const parseJSON=res => res.json();
+  //fetch('http://api.icndb.com/jokes/random?limitTo=[nerdy]')
+  fetch('http://api.icndb.com/jokes/random')
+  .then(checkStatus)
+  .then(parseJSON)
+  .then(data=> {
+document.getElementById('chuck').innerHTML=data.value.joke;
+  }).catch(function(error) {
+  console.log('we failed :( no Chuck for you!',error);
+  });
 }
 var e = document.getElementById('account');
 e.oninput = encrypt;
